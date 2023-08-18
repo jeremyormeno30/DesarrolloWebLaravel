@@ -14,7 +14,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: result.php");
         exit();
     } else {
-        $mensaje_error = '<script>alert("Usuario o Contraseña incorrecta")</script>';
+         $mensaje_error = '<script>Swal.fire(
+          "Alerta",
+          "Usuario o Contraseña incorrecto",
+          "warning"
+          )</script>';
     }
 }
 ?>
@@ -36,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <br>
     <div class="container">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <form action="" method="POST">
   <div class="mb-3">
     <?php if (isset($mensaje_error)) { ?>
